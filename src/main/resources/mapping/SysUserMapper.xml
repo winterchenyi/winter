@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yestic.winter.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.yestic.winter.model.SysUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <id column="LOGIN_NAME" jdbcType="VARCHAR" property="loginName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_AGE" jdbcType="INTEGER" property="userAge" />
+    <result column="SEX" jdbcType="INTEGER" property="sex" />
+    <result column="CELL_PHONE" jdbcType="VARCHAR" property="cellPhone" />
+    <result column="INS_DATE" jdbcType="DATE" property="insDate" />
+    <result column="LAST_UPD_DATE" jdbcType="DATE" property="lastUpdDate" />
+    <result column="LAST_ACCOUNT_ID" jdbcType="VARCHAR" property="lastAccountId" />
+    <result column="USER_ROLE" jdbcType="INTEGER" property="userRole" />
+  </resultMap>
+</mapper>
