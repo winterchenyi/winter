@@ -1,5 +1,5 @@
 ------
-# 项目主要技术 SpringBoot + tk.MyBatsi + Freemarker + Redis + Maven 
+## 项目主要技术 SpringBoot + tk.MyBatsi + Freemarker + Redis + Maven 
 ### 1、搭建SpringBoot，tk.MyBatsi，Freemarker 项目结构（已完成）
 ### 2、集成mybatis-generator，PageHelper （已完成）
 ### 3、集成Redis（已完成）
