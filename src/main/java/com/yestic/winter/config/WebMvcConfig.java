@@ -58,12 +58,15 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         return a.getObject();
     }
 
-//    @Bean
-//    public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
-//        ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet, new String[0]);
-//        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
-//        return registration;
-//    }
+    /**
+     * 如果请求中找不到Handler,让DispatcherServlet来抛异常,用来处理404.
+     */
+    @Bean
+    public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
+        ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet, new String[0]);
+        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
+        return registration;
+    }
 
     /**
      * 静态资源设置

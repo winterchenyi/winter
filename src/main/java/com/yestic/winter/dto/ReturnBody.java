@@ -5,6 +5,7 @@ import com.yestic.winter.constant.ResCode;
 import com.yestic.winter.util.WinterUtils;
 
 /**
+ * 统一返回实体
  * Created by chenyi on 2017/12/19
  */
 public class ReturnBody {

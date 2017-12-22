@@ -17,6 +17,7 @@ import java.io.ObjectOutputStream;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * redis存储操作
  * Created by chenyi on 2017/12/19
  */
 @Component
