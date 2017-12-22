@@ -7,26 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e890b0b3-3c76-48ac-92d0-03f5671800d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/401.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/500.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/common/cast.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/common/tool.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yestic/winter/controller/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yestic/winter/controller/BaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yestic/winter/controller/SysAccountController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yestic/winter/controller/SysAccountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yestic/winter/interceptor/JwtInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/yestic/winter/interceptor/JwtInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/page/index.ftl" afterPath="$PROJECT_DIR$/src/main/resources/static/page/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/page/list.ftl" afterPath="$PROJECT_DIR$/src/main/resources/static/page/list.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/page/user/list.html" afterPath="$PROJECT_DIR$/src/main/resources/static/page/user/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/winter.iml" afterPath="$PROJECT_DIR$/winter.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery-1.7.2.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugin/jquery-1.7.2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery.easyui.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/plugin/jquery.easyui.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="F:/web-ssm/target/" />
@@ -623,7 +604,7 @@
       <workItem from="1513737431712" duration="19058000" />
       <workItem from="1513821095497" duration="2223000" />
       <workItem from="1513834976396" duration="14294000" />
-      <workItem from="1513907873522" duration="6643000" />
+      <workItem from="1513907873522" duration="12697000" />
     </task>
     <task id="LOCAL-00001" summary="去掉class文件">
       <created>1513821534865</created>
@@ -639,7 +620,21 @@
       <option name="project" value="LOCAL" />
       <updated>1513822144607</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="优化">
+      <created>1513914637518</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513914637518</updated>
+    </task>
+    <task id="LOCAL-00004" summary="优化">
+      <created>1513920619282</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1513920619282</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -675,7 +670,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85051000" />
+    <option name="totallyTimeSpent" value="91105000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -761,7 +756,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="去掉class文件" />
     <MESSAGE value="。" />
-    <option name="LAST_COMMIT_MESSAGE" value="。" />
+    <MESSAGE value="优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
