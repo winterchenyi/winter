@@ -14,6 +14,8 @@ import com.yestic.winter.util.HttpUtil;
 import com.yestic.winter.util.MD5;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,8 +63,8 @@ public class BaseController {
     public ReturnBody login(HttpServletRequest request, HttpServletResponse response)throws Exception{
         String loginName = request.getParameter("loginName");
         String password = request.getParameter("password");
-        loginName = "chen";
-        password = "123456";
+//        String loginName = "chen";
+//        String password = "123456";
         SysUser sysUser = sysAccountService.findByLoginName(loginName);
         MD5 md5 = new MD5();
         JSONObject jo = new JSONObject();
@@ -90,6 +92,26 @@ public class BaseController {
                 return ReturnBody.buildSuccess(jo);
             }
         }
+    }
+
+    @RequestMapping(value = "/out")
+    @ResponseBody
+    public void out()throws Exception{
+//        String token = jwtDto.createJWT(Constants.JWT_ID,"001",Constants.JWT_TTL);
+//        return token;
+    }
+
+    /**
+     * 页面路由跳转
+     *  /link?link=/user/list
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/link")
+    public String link(HttpServletRequest request, HttpServletResponse response){
+        String link = request.getParameter("link");
+        return link;
     }
 
 }

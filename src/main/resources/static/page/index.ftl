@@ -13,7 +13,6 @@
     <img class="content-logo" src="/static/images/jianpam.png" alt="logo">
     <h1 class="content-title">登录</h1>
     <div class="content-form">
-        <#--<form action="/login" method="post" id="longform">-->
         <form>
             <div id="change_margin_1">
                 <input class="user" name="loginName" type="text" placeholder="请输入用户名" onblur="oBlur_1()" />
@@ -33,7 +32,7 @@
     <div class="content-login-description">没有账户？</div>
     <div><a class="content-login-link" href="#">注册</a></div>
 </div>
-<script src="/static/js/jquery-1.7.2.min.js" ></script>
+<script src="/static/js/plugin/jquery-1.7.2.min.js" ></script>
 <script type="text/javascript">
 
     function getusername() {
@@ -86,26 +85,29 @@
             document.getElementById("change_margin_3").style.marginTop = 2 + "px";
             return false;
         }else{
-//            $("#longform").submit();
             var param = {
                 loginName : getusername(),
                 password : getpwd()
             };
             $.ajax({
-                type: "POST",
-                data: param,
-                headers:{"token":"aaaaaaaaaaaaaaaaaaaaaaa","Content-Type":"text/plain;charset=UTF-8"},
-                url: "/login",
-                //回调
-                success:function (data) {
+                headers    : {
+                    "token" : "",
+                    contentType: "application/json"
+                },
+                url : "/login",
+                type : "POST",
+                data : param,
+                success : function(data){
                     console.log(data);
-                    console.log("成功回调");
+                    var cdoe = data.code;
+                    var msg = data.msg;
+                    var data = data.data;
+                    if(cdoe != "0000"){
+                        alert(msg);
+                    }else{
+                        window.location.href="/link?link=/list";
+                    }
                 }
-//                // 失败回调
-//                error:function (data) {
-//                    console.log(data);
-//                    console.log("失败回调");
-//                }
             })
         }
     }

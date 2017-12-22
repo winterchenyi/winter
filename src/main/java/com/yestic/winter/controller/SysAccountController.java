@@ -1,11 +1,14 @@
 package com.yestic.winter.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.yestic.winter.dto.ReturnBody;
 import com.yestic.winter.model.SysUser;
 import com.yestic.winter.service.SysAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -20,13 +23,12 @@ public class SysAccountController {
     private SysAccountService sysAccountService;
 
     @RequestMapping(value = "/list")
-    public String  list(Model model){
-//        ModelAndView mv = new ModelAndView();
+    @ResponseBody
+    public ReturnBody list()throws Exception{
         List<SysUser> list = sysAccountService.getAll();
-        model.addAttribute("list",list);
-//        mv.addObject("list",list);
-//        mv.setViewName("list");
-        return "/list";
+        JSONObject jo = new JSONObject();
+        jo.put("list",list);
+        return ReturnBody.buildSuccess(jo);
     }
 
 }

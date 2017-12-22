@@ -25,36 +25,32 @@
                                 <div class="pro_day2 list_num_info">创建时间</div>
                                 <div class="pro_do2 list_num_info"></div>
                             </div>
-                            <div class="list_main">
-                                <#if (list?exists && list?size>0)>
-                                    <#list list as s>
-                                        <div class="list_each">
-                                            <div class="list_num">
-                                                <span>${s_index + 1}</span>
-                                            </div>
-                                            <div class="pro_num">
-                                                <span>${s.loginName}</span>
-                                            </div>
-                                            <div class="pro_name2">
-                                                    <span>${s.userName}</span>
-                                            </div>
-                                            <div class="pro_day2">
-                                                <span>${s.userAge}</span>
-                                            </div>
-                                            <div class="pro_time2">
-                                                <span>${s.cellPhone}</span>
-                                            </div>
-                                            <div class="pro_day2">
-                                                <span>${s.insDate?string('yyyy-MM-dd')}</span>
-                                            </div>
-                                            <div class="pro_do2">
-                                                <div class="do_main do_main2">
-                                                    <a href="javascript:void(0)">编辑</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </#list>
-                                </#if>
+                            <div class="list_main"  id="test">
+                                    <div class="list_each">
+                                        <#--<div class="list_num">-->
+                                            <#--<span id="s_index"></span>-->
+                                        <#--</div>-->
+                                        <#--<div class="pro_num">-->
+                                            <#--<span id="s_loginName"></span>-->
+                                        <#--</div>-->
+                                        <#--<div class="pro_name2">-->
+                                            <#--<span id="s_userName"></span>-->
+                                        <#--</div>-->
+                                        <#--<div class="pro_day2">-->
+                                            <#--<span id="s_userAge"></span>-->
+                                        <#--</div>-->
+                                        <#--<div class="pro_time2">-->
+                                            <#--<span id="sex"></span>-->
+                                        <#--</div>-->
+                                        <#--<div class="pro_day2">-->
+                                            <#--<span id="cellPhone"></span>-->
+                                        <#--</div>-->
+                                        <#--<div class="pro_do2">-->
+                                            <#--<div class="do_main do_main2">-->
+                                                <#--<a href="javascript:void(0)">编辑</a>-->
+                                            <#--</div>-->
+                                        <#--</div>-->
+                                    </div>
                             </div>
                         </div>
                         <!--分页-->
@@ -64,7 +60,41 @@
         </div>
     </div>
 </div>
+<script src="/static/js/plugin/jquery-1.7.2.min.js" ></script>
 <script type="text/javascript">
+    $(function(){
+        $.ajax({
+            headers    : {
+                "token" : "",
+                contentType: "application/json"
+            },
+            url : "/acconut/list",
+            type : "POST",
+            success : function(XMLHttpRequest){
+                console.log(XMLHttpRequest);
+                var cdoe = XMLHttpRequest.code;
+                var msg = XMLHttpRequest.msg;
+                var data = XMLHttpRequest.data;
+                if(cdoe != "0000"){
+                    alert(msg);
+                }else{
+                    var list = data.list;
+                    console.log(list);
+                    var html = "";
+                    for (var i = 0; i < list.length; i++) {
+                    html = html + "<div class='list_each'><div class='list_num'><span id='s_index'>"+ i +"</span></div>" +
+                        "<div class='pro_num'><span id='loginName'>"+list[i].loginName+"</span></div>" +
+                        "<div class='pro_name2'><span id='userName'>"+list[i].userName+"</span></div>" +
+                        "<div class='pro_day2'><span id='userAge'>"+list[i].userAge+"</span></div>" +
+                        "<div class='pro_time2'><span id='sex'>"+list[i].sex+"</span></div>" +
+                        "<div class='pro_day2'><span id='cellPhone'>"+list[i].cellPhone+"</span></div>" +
+                        "<div class='pro_do2'><div class='do_main do_main2'><a href='javascript:void(0)'>编辑</a></div></div></div>";
+                    }
+                    $("#test").html(html);
+                }
+            }
+        })
+    });
 </script>
 </body>
 </html>
