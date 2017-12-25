@@ -35,7 +35,7 @@ public class SysAccountService {
     public SysUser findByLoginName(String loginName){
         SysUser sysAccount = new SysUser();
         sysAccount.setLoginName(loginName);
-        sysAccount = sysUserMapper.select(sysAccount).get(0);
+        sysAccount = sysUserMapper.selectOne(sysAccount);
         return sysAccount;
     }
 

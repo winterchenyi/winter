@@ -18,6 +18,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.TimeUnit;
 
 /** 
@@ -51,5 +52,11 @@ public class RedisTest {
         System.out.println(jwtUser.toString());
     }
 
+    @Test
+    public void testIp(HttpServletRequest request) throws Exception{
+        HttpUtil httpUtil = new HttpUtil();
+        String ip = httpUtil.getIpAddress(request);
+        System.out.println(ip);
+    }
 
 } 

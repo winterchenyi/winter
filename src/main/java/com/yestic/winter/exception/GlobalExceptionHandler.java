@@ -19,6 +19,7 @@ public class GlobalExceptionHandler {
     public GlobalExceptionHandler() {
     }
 
+    //404
     @ExceptionHandler({NoHandlerFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ReturnBody noHandlerFoundException(Exception ex) {
@@ -41,12 +42,13 @@ public class GlobalExceptionHandler {
         }
     }
 
-//    @ExceptionHandler({ParamValidationException.class})
-//    @ResponseStatus(HttpStatus.OK)
-//    public ReturnBody paramValidationException(Exception ex) {
-//        return ReturnBody.buildData(ResCode.PARAMETERTYPEMISMATCHING, ex.getMessage());
-//    }
+    @ExceptionHandler({ParamValidationException.class})
+    @ResponseStatus(HttpStatus.OK)
+    public ReturnBody paramValidationException(Exception ex) {
+        return ReturnBody.buildData(ResCode.PARAMETERTYPEMISMATCHING, ex.getMessage());
+    }
 
+    //500
     @ExceptionHandler({Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ReturnBody exception(Exception ex) {

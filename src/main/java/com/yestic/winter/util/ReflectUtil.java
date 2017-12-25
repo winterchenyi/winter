@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
+ * 将json数据注入到bean中
  * Created by chenyi on 2017/12/22
  */
 public class ReflectUtil {

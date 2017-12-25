@@ -53,7 +53,7 @@ public class BaseController {
     @JWT
     @RequestMapping(value = {"/test"})
     @ResponseBody
-    public ReturnBody test(HttpServletRequest request) throws Exception {
+    public ReturnBody test(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("this is test");
         return ReturnBody.buildSuccess();
     }
@@ -63,8 +63,6 @@ public class BaseController {
     public ReturnBody login(HttpServletRequest request, HttpServletResponse response)throws Exception{
         String loginName = request.getParameter("loginName");
         String password = request.getParameter("password");
-//        String loginName = "chen";
-//        String password = "123456";
         SysUser sysUser = sysAccountService.findByLoginName(loginName);
         MD5 md5 = new MD5();
         JSONObject jo = new JSONObject();
@@ -85,7 +83,6 @@ public class BaseController {
                 String subject = jwtDto.generalSubject(users);
                 String token = jwtDto.createJWT(Constants.JWT_ID, subject, Constants.JWT_TTL);
                 System.out.println(token);
-//                String refreshToken = jwtDto.createJWT(Constants.JWT_ID, subject, Constants.JWT_REFRESH_TTL);
                 redisCache.put("jwtUser_"+users.getUserName(), users, Constants.JWT_TTL);
                 jo.put("token",token);
                 jo.put("user",sysUser);
@@ -96,9 +93,13 @@ public class BaseController {
 
     @RequestMapping(value = "/out")
     @ResponseBody
-    public void out()throws Exception{
-//        String token = jwtDto.createJWT(Constants.JWT_ID,"001",Constants.JWT_TTL);
-//        return token;
+    public ReturnBody out(HttpServletRequest request, HttpServletResponse response)throws Exception{
+        String loginName = request.getParameter("loginName");
+        JwtUser user = new JwtUser();
+        SysUser sysUser = sysAccountService.findByLoginName(loginName);
+        user = redisCache.get("jwtUser_" + sysUser.getUserName(),JwtUser.class);
+        redisCache.del("jwtUser_" + user.getUserName());
+        return ReturnBody.buildSuccess();
     }
 
     /**
