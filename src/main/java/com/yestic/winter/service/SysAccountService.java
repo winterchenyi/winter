@@ -5,8 +5,10 @@ import com.github.pagehelper.PageInfo;
 import com.yestic.winter.mapper.SysUserMapper;
 import com.yestic.winter.model.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 

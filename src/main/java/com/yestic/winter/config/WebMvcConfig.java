@@ -23,6 +23,11 @@ import java.util.Properties;
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
+    @Bean
+    public SpringBeanUtil springBeanUtil(){
+        return new SpringBeanUtil();
+    }
+
     /**
      * JWT拦截器
      */

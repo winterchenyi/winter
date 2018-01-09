@@ -126,6 +126,13 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
 
 
 
@@ -138,6 +145,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--<configuration>-->
+                    <!--fork : 如果没有该项配置，devtools不会起作用，即应用不会restart -->
+                    <!--<fork>true</fork>-->
+                    <!-- 可选的配置 -->
+                    <!--<executable>true</executable>-->
+                <!--</configuration>-->
             </plugin>
             <!-- MyBatis代码生成 -->
             <plugin>

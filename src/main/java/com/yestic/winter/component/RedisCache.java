@@ -1,7 +1,6 @@
 package com.yestic.winter.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;

@@ -10,3 +10,4 @@
 ### 8、使用@RequestBody 对页面传递参数进行封装，ParamsBody取页面传递的参数（已完成）
 ### 9、通过Spring aop 对参数进行验证 , 可查看SysAccountController/save（已完成）
 ### 10、替换 Freemarker （进行中--还在考虑用什么前端技术）
+### 11、动态配置定时任务，可视图化，页面配置（进行中）
