@@ -3,6 +3,7 @@ package com.yestic.winter.config;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.yestic.winter.interceptor.JwtInterceptor;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.boot.autoconfigure.web.MultipartProperties;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -22,6 +24,28 @@ import java.util.Properties;
  */
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
+    /**
+     * 文件上传设置
+     * @return
+     */
+    /*@Bean
+    public CommonsMultipartResolver multipartResolver(){
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setDefaultEncoding("UTF-8");
+        resolver.setMaxUploadSize(104857600);//100M
+        resolver.setResolveLazily(true);
+        return resolver;
+    }*/
+
+    /*@Bean
+    public MultipartProperties multipartProperties(){
+        MultipartProperties multipartProperties = new MultipartProperties();
+        multipartProperties.setMaxFileSize("104857600");
+        multipartProperties.setMaxRequestSize("10");
+        multipartProperties.setResolveLazily(true);
+        return multipartProperties;
+    }*/
 
     @Bean
     public SpringBeanUtil springBeanUtil(){
@@ -56,9 +80,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         a.setDefaultContentType(MediaType.TEXT_HTML);
         Properties properties = new Properties();
         properties.put("json", MediaType.APPLICATION_JSON_UTF8_VALUE);
-//        properties.put("json", "application/json;charset=UTF-8");
         properties.put("xml",MediaType.APPLICATION_XML_VALUE);
-//        properties.put("xml", "application/xml");
         a.setMediaTypes(properties);
         return a.getObject();
     }
@@ -84,5 +106,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/images/");
         super.addResourceHandlers(registry);
     }
+
 
 }

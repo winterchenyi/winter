@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
-@MapperScan(basePackages = {"com.yestic.winter.mapper","com.yestic.winter.component"})
+@MapperScan(basePackages = {"com.yestic.winter.mapper"})
 @ServletComponentScan
 public class Application {
 
